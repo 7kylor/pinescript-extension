@@ -1,0 +1,36 @@
+//@version=6
+indicator("Advanced Syntax Test", overlay=true)
+
+// Test advanced syntax features
+var array<float> prices = array.new<float>()
+var matrix<float> data = matrix.new<float>(10, 5)
+var map<string> info = map.new<string>()
+
+// Array operations
+array.push(prices, close)
+array.push(prices, open)
+size = array.size(prices)
+value = array.get(prices, 0)
+
+// Matrix operations
+matrix.set(data, 0, 0, close)
+matrixValue = matrix.get(data, 0, 0)
+
+// Map operations
+map.put(info, "ticker", syminfo.ticker)
+ticker = map.get(info, "ticker")
+
+// String operations
+formatted = str.format("Price: {0}", close)
+contains = str.contains(formatted, "Price")
+length = str.length(formatted)
+
+// Math operations
+absValue = math.abs(-10)
+maxValue = math.max(10, 20)
+minValue = math.min(10, 20)
+sqrtValue = math.sqrt(100)
+powValue = math.pow(2, 3)
+
+plot(close, title="Close", color=color.blue)
+

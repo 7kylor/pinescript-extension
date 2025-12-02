@@ -1,0 +1,21 @@
+//@version=6
+library("Library Example", overlay=false)
+
+// Test library syntax (v6 feature)
+// Libraries export functions for use in other scripts
+
+// Export a simple function
+export smaCustom(source, length) =>
+    ta.sma(source, length)
+
+// Export a function with multiple returns
+export macdCustom(source, fast, slow, signal) =>
+    ta.macd(source, fast, slow, signal)
+
+// Non-exported function (internal use only)
+internalFunction(x) =>
+    x * 2
+
+// Export a constant
+export MY_CONSTANT = 100
+

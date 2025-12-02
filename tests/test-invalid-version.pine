@@ -1,0 +1,9 @@
+//@version=7
+indicator("Invalid Version", overlay=true)
+
+// This file uses an unsupported version
+// Should show an error about unsupported version
+
+sma20 = ta.sma(close, 20)
+plot(sma20, title="SMA 20", color=color.blue)
+

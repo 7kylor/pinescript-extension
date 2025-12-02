@@ -1,0 +1,8 @@
+//@version=6
+indicator("Array Completion Test", overlay=true)
+
+// Test array namespace completion
+// Type "array." and press Ctrl+Space to test completion
+
+array.
+

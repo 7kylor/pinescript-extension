@@ -1,0 +1,8 @@
+//@version=6
+indicator("TA Completion Test", overlay=true)
+
+// Test technical analysis namespace completion
+// Type "ta." and press Ctrl+Space to test completion
+
+ta.
+

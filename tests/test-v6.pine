@@ -1,0 +1,14 @@
+//@version=6
+indicator("V6 Test Indicator", overlay=true)
+
+// Test v6 syntax
+sma20 = ta.sma(close, 20)
+ema20 = ta.ema(close, 20)
+rsi = ta.rsi(close, 14)
+
+plot(sma20, title="SMA 20", color=color.blue)
+plot(ema20, title="EMA 20", color=color.red)
+
+if ta.crossover(sma20, ema20)
+    label.new(bar_index, high, "Crossover", color=color.green)
+

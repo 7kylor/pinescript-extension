@@ -1,0 +1,16 @@
+//@version=6
+indicator("Diagnostics Warnings Test", overlay=true)
+
+// This file contains warnings for testing diagnostics
+
+// Warning: Variable declared but not used
+var float unusedVar = 10.0
+
+// Warning: Potential division by zero
+divisor = 0
+result = close / divisor
+
+// Valid code
+sma20 = ta.sma(close, 20)
+plot(sma20, title="SMA 20", color=color.blue)
+

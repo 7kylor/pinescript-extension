@@ -1,0 +1,8 @@
+indicator("No Version Directive", overlay=true)
+
+// This file is missing the version directive
+// Should show a warning about missing version directive
+
+sma20 = ta.sma(close, 20)
+plot(sma20, title="SMA 20", color=color.blue)
+

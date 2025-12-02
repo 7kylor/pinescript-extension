@@ -159,6 +159,30 @@ You can configure the extension in VS Code/Cursor settings:
 - VS Code or Cursor version 1.74.0 or higher
 - Node.js (for building from source)
 
+## Testing
+
+The extension includes a comprehensive test suite in the `tests/` directory.
+
+### Quick Test
+
+1. Open a `.pine` file in VS Code/Cursor
+2. Verify syntax highlighting works
+3. Type `ta.` and verify autocomplete appears
+4. Hover over a function name to see documentation
+5. Try snippets by typing `indicator` and pressing Tab
+
+### Test Suite
+
+The `tests/` directory contains 16 test files covering:
+
+- **Version directive tests**: v5, v6, missing version, invalid version
+- **Syntax highlighting tests**: Basic, advanced, and function syntax
+- **Code completion tests**: TA, math, string, and array namespaces
+- **Diagnostics tests**: Error detection and warnings
+- **Feature tests**: Complete indicator, strategy, and library examples
+
+See [tests/README.md](./tests/README.md) for detailed testing instructions and [tests/QUICK_START.md](./tests/QUICK_START.md) for a quick start guide.
+
 ## Development
 
 ### Project Structure

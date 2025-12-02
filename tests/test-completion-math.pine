@@ -1,0 +1,8 @@
+//@version=6
+indicator("Math Completion Test", overlay=true)
+
+// Test math namespace completion
+// Type "math." and press Ctrl+Space to test completion
+
+math.
+

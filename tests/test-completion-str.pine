@@ -1,0 +1,8 @@
+//@version=6
+indicator("String Completion Test", overlay=true)
+
+// Test string namespace completion
+// Type "str." and press Ctrl+Space to test completion
+
+str.
+

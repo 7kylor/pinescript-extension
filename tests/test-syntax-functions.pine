@@ -1,0 +1,34 @@
+//@version=6
+indicator("Function Syntax Test", overlay=true)
+
+// Test function declarations
+simpleFunction() =>
+    close
+
+functionWithParams(x, y) =>
+    x + y
+
+functionWithType(x, y) =>
+    result = x * y
+    result
+
+functionWithMultipleReturns(x, y) =>
+    sum = x + y
+    product = x * y
+    [sum, product]
+
+// Test function calls
+result1 = simpleFunction()
+result2 = functionWithParams(10, 20)
+result3 = functionWithType(5.0, 2.0)
+[sumResult, productResult] = functionWithMultipleReturns(10, 5)
+
+// Test built-in functions
+sma = ta.sma(close, 20)
+ema = ta.ema(close, 20)
+rsi = ta.rsi(close, 14)
+macdLine = ta.macd(close, 12, 26, 9)
+
+plot(sma, title="SMA", color=color.blue)
+plot(ema, title="EMA", color=color.red)
+

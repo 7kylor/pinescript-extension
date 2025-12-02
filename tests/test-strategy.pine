@@ -1,0 +1,35 @@
+//@version=6
+strategy("Complete Strategy Example", overlay=true, initial_capital=10000, 
+         default_qty_type=strategy.percent_of_equity, default_qty_value=100)
+
+// Inputs
+fastLength = input.int(12, title="Fast Length", minval=1)
+slowLength = input.int(26, title="Slow Length", minval=1)
+signalLength = input.int(9, title="Signal Length", minval=1)
+
+// Calculations
+[macdLine, signalLine, histLine] = ta.macd(close, fastLength, slowLength, signalLength)
+
+// Conditions
+longCondition = ta.crossover(macdLine, signalLine)
+shortCondition = ta.crossunder(macdLine, signalLine)
+
+// Strategy entries
+if longCondition
+    strategy.entry("Long", strategy.long, comment="Long Entry")
+
+if shortCondition
+    strategy.entry("Short", strategy.short, comment="Short Entry")
+
+// Strategy exits
+strategy.exit("Long Exit", from_entry="Long", profit=100, loss=50)
+strategy.exit("Short Exit", from_entry="Short", profit=100, loss=50)
+
+// Plots
+plot(macdLine, title="MACD Line", color=color.blue)
+plot(signalLine, title="Signal Line", color=color.red)
+hline(0, title="Zero Line", color=color.gray, linestyle=hline.style_dashed)
+
+// Background
+bgcolor(longCondition ? color.new(color.green, 90) : shortCondition ? color.new(color.red, 90) : na)
+

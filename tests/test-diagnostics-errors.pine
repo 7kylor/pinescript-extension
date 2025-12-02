@@ -1,0 +1,20 @@
+//@version=6
+indicator("Diagnostics Errors Test", overlay=true)
+
+// This file contains intentional errors for testing diagnostics
+
+// Error: Missing colon after if statement
+if close > open
+    plot(close)
+
+// Error: Mismatched parentheses
+result = math.max(10, 20
+
+// Error: Unknown function
+unknown = ta.unknownFunction(close, 20)
+
+// Error: Type mismatch (should show warning)
+intValue = "string"
+
+plot(close, title="Close")
+
