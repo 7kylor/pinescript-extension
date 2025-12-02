@@ -2,7 +2,7 @@
 
 All notable changes to the Pine Script Language Support extension will be documented in this file.
 
-## [1.0.0] - 2024-12-02
+## [1.0.0] - 2025-12-02
 
 ### Added
 

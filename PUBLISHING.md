@@ -7,6 +7,7 @@ This guide covers how to publish the Pine Script Language Support extension to b
 ### 1. Accounts Required
 
 - **VS Code Marketplace**: Microsoft account (free)
+
   - Sign up at: https://marketplace.visualstudio.com/manage
   - Or use existing Microsoft account
 
@@ -76,6 +77,7 @@ Ensure your `package.json` has the required fields:
 ```
 
 **Important fields:**
+
 - `publisher`: Your unique publisher ID (create at marketplace)
 - `version`: Must follow semantic versioning (x.y.z)
 - `repository`: Public repository URL (optional but recommended)
@@ -196,11 +198,12 @@ Before publishing updates, bump the version in `package.json`:
 
 ```json
 {
-  "version": "1.0.1"  // Increment patch, minor, or major
+  "version": "1.0.1" // Increment patch, minor, or major
 }
 ```
 
 Follow [Semantic Versioning](https://semver.org/):
+
 - **Patch** (1.0.1): Bug fixes
 - **Minor** (1.1.0): New features, backward compatible
 - **Major** (2.0.0): Breaking changes
@@ -231,6 +234,7 @@ ovsx publish pinescript-1.0.1.vsix
 ### 1. README.md
 
 Ensure your README includes:
+
 - Clear description
 - Features list
 - Installation instructions
@@ -246,12 +250,16 @@ Create a `CHANGELOG.md` file:
 ```markdown
 # Change Log
 
-## [1.0.1] - 2024-12-02
+## [1.0.1] - 2025-12-02
+
 ### Fixed
+
 - Fixed version validation for v6
 
-## [1.0.0] - 2024-12-02
+## [1.0.0] - 2025-12-02
+
 ### Added
+
 - Initial release
 - Pine Script v5 and v6 support
 - Syntax highlighting
@@ -319,7 +327,8 @@ Add badges to your README:
 
 **Problem**: Extension package exceeds size limits.
 
-**Solution**: 
+**Solution**:
+
 - Add files to `.vscodeignore`
 - Remove unnecessary files from `node_modules`
 - Use bundling (webpack, etc.)
@@ -400,4 +409,3 @@ If you encounter issues:
 2. Check Open VSX documentation
 3. Review extension logs
 4. Check GitHub issues for similar problems
-
