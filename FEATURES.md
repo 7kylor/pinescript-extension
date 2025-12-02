@@ -4,7 +4,7 @@
 
 ### 1. Syntax Highlighting
 
-- **Full Pine Script v5 syntax support**
+- **Full Pine Script v5 and v6 syntax support**
 - Color-coded elements:
   - Keywords (if, else, for, while, function, var, etc.)
   - Built-in functions (ta.sma, math.abs, str.tostring, etc.)
@@ -21,7 +21,7 @@
 
 - **Namespace-aware completion**: Type `ta.` to see all technical analysis functions
 - **Context-aware suggestions**: Based on current typing context
-- **Built-in function completion**: All Pine Script v5 functions included
+- **Built-in function completion**: All Pine Script v5 and v6 functions included
 - **Variable completion**: Built-in variables (open, high, low, close, etc.)
 - **Type completion**: All Pine Script types
 - **Keyword completion**: Language keywords
@@ -35,7 +35,7 @@
 
 #### Diagnostics
 
-- **Version directive validation**: Checks for `//@version=5`
+- **Version directive validation**: Checks for `//@version=5` or `//@version=6`
 - **Syntax error detection**: Identifies syntax issues
 - **Parentheses matching**: Validates bracket pairs
 - **Type checking**: Warns about type mismatches
@@ -173,7 +173,7 @@ All features can be toggled via VS Code/Cursor settings:
 }
 ```
 
-## Supported Pine Script v5 Features
+## Supported Pine Script v5 and v6 Features
 
 ### Built-in Functions (50+)
 
@@ -208,7 +208,7 @@ All features can be toggled via VS Code/Cursor settings:
 
 - **VS Code**: 1.74.0+
 - **Cursor**: All versions
-- **Pine Script**: v5 (primary support)
+- **Pine Script**: v5 and v6 (full support)
 - **Node.js**: 16+ (for building)
 
 ## Future Enhancements

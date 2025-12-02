@@ -2,7 +2,7 @@
   "Indicator": {
     "prefix": "indicator",
     "body": [
-      "//@version=5",
+      "//@version=6",
       "indicator(\"${1:Indicator Name}\", overlay=${2:true}, max_bars_back=${3:500})",
       "",
       "${4:// Your code here}"
@@ -12,7 +12,7 @@
   "Strategy": {
     "prefix": "strategy",
     "body": [
-      "//@version=5",
+      "//@version=6",
       "strategy(\"${1:Strategy Name}\", overlay=true, initial_capital=${2:10000}, default_qty_type=strategy.percent_of_equity, default_qty_value=${3:100})",
       "",
       "${4:// Your code here}"

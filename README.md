@@ -1,12 +1,12 @@
 # Pine Script Language Support for VS Code and Cursor
 
-A comprehensive language support extension for Pine Script v5, providing syntax highlighting, IntelliSense, code completion, hover documentation, diagnostics, and snippets.
+A comprehensive language support extension for Pine Script v5 and v6, providing syntax highlighting, IntelliSense, code completion, hover documentation, diagnostics, and snippets.
 
 ## Features
 
 ### Syntax Highlighting
 
-- Full Pine Script v5 syntax support
+- Full Pine Script v5 and v6 syntax support
 - Color-coded keywords, functions, types, and operators
 - Support for comments, strings, and numbers
 
@@ -112,7 +112,7 @@ Type snippet prefixes and press `Tab` to expand:
 
 The extension automatically validates your Pine Script code and shows:
 
-- Missing version directive warnings
+- Missing version directive warnings (supports v5 and v6)
 - Syntax errors
 - Type mismatches
 - Parentheses mismatches

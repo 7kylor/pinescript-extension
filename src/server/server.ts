@@ -177,21 +177,21 @@ function validateTextDocument(textDocument: TextDocument): void {
       if (i === 0 && line.match(/^\/\/@version=\d+/)) {
         hasVersionDirective = true;
         versionLine = i;
-        const versionMatch = line.match(/^\/\/@version=(\d+)/);
-        if (versionMatch) {
-          const version = parseInt(versionMatch[1]);
-          if (version < 1 || version > 5) {
-            diagnostics.push({
-              severity: DiagnosticSeverity.Warning,
-              range: {
-                start: { line: lineNumber, character: 0 },
-                end: { line: lineNumber, character: line.length },
-              },
-              message: `Pine Script version ${version} is not supported. Use version 5.`,
-              source: "pinescript",
-            });
+          const versionMatch = line.match(/^\/\/@version=(\d+)/);
+          if (versionMatch) {
+            const version = parseInt(versionMatch[1]);
+            if (version < 1 || version > 6) {
+              diagnostics.push({
+                severity: DiagnosticSeverity.Warning,
+                range: {
+                  start: { line: lineNumber, character: 0 },
+                  end: { line: lineNumber, character: line.length },
+                },
+                message: `Pine Script version ${version} is not supported. Use version 5 or 6.`,
+                source: "pinescript",
+              });
+            }
           }
-        }
       }
 
       if (i === 0 && !hasVersionDirective && line.trim() !== "") {
@@ -202,7 +202,7 @@ function validateTextDocument(textDocument: TextDocument): void {
             end: { line: 0, character: line.length },
           },
           message:
-            "Missing version directive. Add //@version=5 at the top of the file.",
+            "Missing version directive. Add //@version=6 (or //@version=5) at the top of the file.",
           source: "pinescript",
         });
       }

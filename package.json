@@ -1,7 +1,7 @@
 {
   "name": "pinescript",
   "displayName": "Pine Script Language Support",
-  "description": "Full language support for Pine Script v5 with syntax highlighting, IntelliSense, snippets, and diagnostics",
+  "description": "Full language support for Pine Script v5 and v6 with syntax highlighting, IntelliSense, snippets, and diagnostics",
   "version": "1.0.0",
   "publisher": "pinescript",
   "repository": {
