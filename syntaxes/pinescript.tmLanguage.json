@@ -1,0 +1,158 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Pine Script",
+  "scopeName": "source.pinescript",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#version-directive"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#types"
+    },
+    {
+      "include": "#builtin-functions"
+    },
+    {
+      "include": "#builtin-variables"
+    },
+    {
+      "include": "#constants"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#operators"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.pinescript",
+          "match": "//.*"
+        },
+        {
+          "name": "comment.block.pinescript",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "version-directive": {
+      "patterns": [
+        {
+          "name": "keyword.other.version.pinescript",
+          "match": "//@version=\\d+"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.pinescript",
+          "match": "\\b(if|else|elseif|for|while|switch|case|default|return|break|continue|var|varip|true|false|na|nz|and|or|not)\\b"
+        },
+        {
+          "name": "keyword.declaration.pinescript",
+          "match": "\\b(indicator|strategy|library|namespace|type|extends|import|export|public|private|protected)\\b"
+        },
+        {
+          "name": "keyword.function.pinescript",
+          "match": "\\b(function|=>|end)\\b"
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "name": "storage.type.pinescript",
+          "match": "\\b(int|float|bool|color|string|line|label|box|table|array|matrix|map|linefill|polyline|line|plot|hline|vline|series|simple|input|const)\\b"
+        }
+      ]
+    },
+    "builtin-functions": {
+      "patterns": [
+        {
+          "name": "support.function.builtin.pinescript",
+          "match": "\\b(math\\.|ta\\.|str\\.|array\\.|matrix\\.|map\\.|request\\.|plot\\.|label\\.|line\\.|box\\.|table\\.|color\\.|barstate\\.|barcolor\\.|barssince|barssincec|barstate\\.|bgcolor|fill|hline|input\\.|na|nz|plot|plotarrow|plotbar|plotcandle|plotchar|plotshape|scatter|security|strategy\\.|syminfo\\.|time\\.|timenow|timestamp|tostring|volume)\\w*"
+        },
+        {
+          "name": "support.function.builtin.pinescript",
+          "match": "\\b(abs|alert|alertcondition|ann|bar_index|barstate|barssince|barssincec|barcolor|bgcolor|change|close|color|dayofmonth|dayofweek|fill|high|highest|hour|input|label|line|low|lowest|math\\.abs|math\\.acos|math\\.asin|math\\.atan|math\\.avg|math\\.ceil|math\\.cos|math\\.exp|math\\.floor|math\\.log|math\\.max|math\\.min|math\\.pow|math\\.random|math\\.round|math\\.sign|math\\.sin|math\\.sqrt|math\\.sum|math\\.tan|minute|month|na|nz|open|plot|plotarrow|plotbar|plotcandle|plotchar|plotshape|request\\.security|second|str\\.contains|str\\.endswith|str\\.format|str\\.length|str\\.lower|str\\.match|str\\.pos|str\\.replace|str\\.replace_all|str\\.split|str\\.startswith|str\\.substring|str\\.tonumber|str\\.tostring|str\\.upper|strategy\\.entry|strategy\\.exit|strategy\\.close|strategy\\.close_all|strategy\\.cancel|strategy\\.cancel_all|strategy\\.risk|strategy\\.position_size|strategy\\.position_avg_price|strategy\\.position_entry_name|strategy\\.opentrades|strategy\\.wintrades|strategy\\.losstrades|strategy\\.closedtrades|strategy\\.netprofit|strategy\\.grossprofit|strategy\\.grossloss|syminfo\\.ticker|syminfo\\.tickerid|syminfo\\.prefix|syminfo\\.root|syminfo\\.basecurrency|syminfo\\.currency|syminfo\\.description|syminfo\\.type|syminfo\\.timezone|syminfo\\.session|syminfo\\.pointvalue|syminfo\\.minmove|syminfo\\.pricescale|ta\\.accdist|ta\\.adx|ta\\.adxr|ta\\.ao|ta\\.aroon|ta\\.aroonosc|ta\\.atr|ta\\.bb|ta\\.bbw|ta\\.bop|ta\\.cci|ta\\.cmo|ta\\.cog|ta\\.correlation|ta\\.cross|ta\\.crossover|ta\\.csi|ta\\.cum|ta\\.dmi|ta\\.dm|ta\\.ema|ta\\.ewma|ta\\.falling|ta\\.fish|ta\\.highest|ta\\.highestbars|ta\\.hma|ta\\.kaufman|ta\\.kc|ta\\.kcw|ta\\.linreg|ta\\.lowest|ta\\.lowestbars|ta\\.macd|ta\\.mfi|ta\\.mom|ta\\.obv|ta\\.percentile_linear_interpolation|ta\\.percentile_nearest_rank|ta\\.percentrank|ta\\.pivothigh|ta\\.pivotlow|ta\\.range|ta\\.rising|ta\\.rma|ta\\.roc|ta\\.rsi|ta\\.sar|ta\\.sma|ta\\.stdev|ta\\.stoch|ta\\.supertrend|ta\\.swma|ta\\.tr|ta\\.tsi|ta\\.valuewhen|ta\\.variance|ta\\.vwap|ta\\.vwma|ta\\.wad|ta\\.wad|ta\\.wcp|ta\\.willr|ta\\.wma|time|timenow|timestamp|tostring|volume|weekofyear|year)\\b"
+        }
+      ]
+    },
+    "builtin-variables": {
+      "patterns": [
+        {
+          "name": "support.variable.builtin.pinescript",
+          "match": "\\b(open|high|low|close|volume|time|timenow|bar_index|barstate\\.|syminfo\\.|timeframe\\.|timeframe_multiplier|timeframe_period|timeframe_in_seconds|timeframe_isdaily|timeframe_isintraday|timeframe_isdaily|timeframe_isweekly|timeframe_ismonthly)\\w*"
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "name": "constant.language.pinescript",
+          "match": "\\b(extend\\.|location\\.|size\\.|style\\.|shape\\.|display\\.|scale\\.|line\\.|label\\.|box\\.|table\\.|alert\\.|strategy\\.|color\\.|plot\\.|input\\.|barstate\\.|syminfo\\.|timeframe\\.)\\w+"
+        },
+        {
+          "name": "constant.numeric.pinescript",
+          "match": "\\b(FIB_|PI|E)\\w*"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.pinescript",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.pinescript",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.pinescript",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            {
+              "name": "constant.character.escape.pinescript",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.pinescript",
+          "match": "\\b\\d+(\\.\\d+)?([eE][+-]?\\d+)?\\b"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.pinescript",
+          "match": "([+\\-*/%=<>!&|?:]+|:=)"
+        }
+      ]
+    }
+  }
+}

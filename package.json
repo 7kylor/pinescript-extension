@@ -1,0 +1,105 @@
+{
+  "name": "pinescript",
+  "displayName": "Pine Script Language Support",
+  "description": "Full language support for Pine Script v5 with syntax highlighting, IntelliSense, snippets, and diagnostics",
+  "version": "1.0.0",
+  "publisher": "pinescript",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pinescript/extension"
+  },
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Linters"
+  ],
+  "keywords": [
+    "pinescript",
+    "tradingview",
+    "trading",
+    "indicator",
+    "strategy"
+  ],
+  "activationEvents": [
+    "onLanguage:pinescript"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "pinescript",
+        "aliases": [
+          "Pine Script",
+          "pinescript",
+          "pine"
+        ],
+        "extensions": [
+          ".pine"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "pinescript",
+        "scopeName": "source.pinescript",
+        "path": "./syntaxes/pinescript.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "pinescript",
+        "path": "./snippets/pinescript.json"
+      }
+    ],
+    "configuration": {
+      "title": "Pine Script",
+      "properties": {
+        "pinescript.enableDiagnostics": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable diagnostic checks for Pine Script files"
+        },
+        "pinescript.enableCompletion": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable code completion"
+        },
+        "pinescript.enableHover": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable hover documentation"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "pinescript.format",
+        "title": "Format Pine Script Document"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./ && tsc -p ./src/server",
+    "watch": "tsc -watch -p ./",
+    "watch:server": "tsc -watch -p ./src/server",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.74.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.0.0",
+    "vscode-languageserver": "^9.0.0",
+    "vscode-languageserver-textdocument": "^1.0.8"
+  }
+}

@@ -1,0 +1,310 @@
+{
+  "Indicator": {
+    "prefix": "indicator",
+    "body": [
+      "//@version=5",
+      "indicator(\"${1:Indicator Name}\", overlay=${2:true}, max_bars_back=${3:500})",
+      "",
+      "${4:// Your code here}"
+    ],
+    "description": "Create a new indicator"
+  },
+  "Strategy": {
+    "prefix": "strategy",
+    "body": [
+      "//@version=5",
+      "strategy(\"${1:Strategy Name}\", overlay=true, initial_capital=${2:10000}, default_qty_type=strategy.percent_of_equity, default_qty_value=${3:100})",
+      "",
+      "${4:// Your code here}"
+    ],
+    "description": "Create a new strategy"
+  },
+  "Function": {
+    "prefix": "function",
+    "body": [
+      "${1:functionName}(${2:param1}, ${3:param2}) =>",
+      "    ${4:// function body}",
+      "    ${5:returnValue}"
+    ],
+    "description": "Create a function"
+  },
+  "Input Bool": {
+    "prefix": "input.bool",
+    "body": [
+      "${1:varName} = input.bool(${2:true}, \"${3:Label}\", group=\"${4:Group}\")"
+    ],
+    "description": "Create a boolean input"
+  },
+  "Input Float": {
+    "prefix": "input.float",
+    "body": [
+      "${1:varName} = input.float(${2:0.0}, \"${3:Label}\", minval=${4:0.0}, maxval=${5:100.0}, step=${6:0.1}, group=\"${7:Group}\")"
+    ],
+    "description": "Create a float input"
+  },
+  "Input Int": {
+    "prefix": "input.int",
+    "body": [
+      "${1:varName} = input.int(${2:14}, \"${3:Label}\", minval=${4:1}, maxval=${5:100}, group=\"${6:Group}\")"
+    ],
+    "description": "Create an integer input"
+  },
+  "Input String": {
+    "prefix": "input.string",
+    "body": [
+      "${1:varName} = input.string(\"${2:default}\", \"${3:Label}\", group=\"${4:Group}\")"
+    ],
+    "description": "Create a string input"
+  },
+  "Input Color": {
+    "prefix": "input.color",
+    "body": [
+      "${1:varName} = input.color(color.new(color.${2:blue}, ${3:0}), \"${4:Label}\", group=\"${5:Group}\")"
+    ],
+    "description": "Create a color input"
+  },
+  "Plot": {
+    "prefix": "plot",
+    "body": [
+      "plot(${1:series}, title=\"${2:Title}\", color=${3:color.blue}, linewidth=${4:1})"
+    ],
+    "description": "Plot a series"
+  },
+  "Plot Shape": {
+    "prefix": "plotshape",
+    "body": [
+      "plotshape(${1:condition}, title=\"${2:Title}\", location=location.${3:belowbar}, color=${4:color.red}, style=shape.${5:triangleup}, size=${6:size.small})"
+    ],
+    "description": "Plot a shape"
+  },
+  "If Statement": {
+    "prefix": "if",
+    "body": [
+      "if ${1:condition}",
+      "    ${2:// code}"
+    ],
+    "description": "If statement"
+  },
+  "If Else": {
+    "prefix": "ifelse",
+    "body": [
+      "if ${1:condition}",
+      "    ${2:// code}",
+      "else",
+      "    ${3:// code}"
+    ],
+    "description": "If-else statement"
+  },
+  "For Loop": {
+    "prefix": "for",
+    "body": [
+      "for ${1:i} = ${2:0} to ${3:10}",
+      "    ${4:// code}"
+    ],
+    "description": "For loop"
+  },
+  "While Loop": {
+    "prefix": "while",
+    "body": [
+      "while ${1:condition}",
+      "    ${2:// code}"
+    ],
+    "description": "While loop"
+  },
+  "SMA": {
+    "prefix": "ta.sma",
+    "body": [
+      "ta.sma(${1:source}, ${2:length})"
+    ],
+    "description": "Simple Moving Average"
+  },
+  "EMA": {
+    "prefix": "ta.ema",
+    "body": [
+      "ta.ema(${1:source}, ${2:length})"
+    ],
+    "description": "Exponential Moving Average"
+  },
+  "RSI": {
+    "prefix": "ta.rsi",
+    "body": [
+      "ta.rsi(${1:source}, ${2:length})"
+    ],
+    "description": "Relative Strength Index"
+  },
+  "MACD": {
+    "prefix": "ta.macd",
+    "body": [
+      "[${1:macdLine}, ${2:signalLine}, ${3:histLine}] = ta.macd(${4:source}, ${5:12}, ${6:26}, ${7:9})"
+    ],
+    "description": "MACD indicator"
+  },
+  "Array New": {
+    "prefix": "array.new",
+    "body": [
+      "array.new<${1:type}>(${2:})"
+    ],
+    "description": "Create a new array"
+  },
+  "Array Push": {
+    "prefix": "array.push",
+    "body": [
+      "array.push(${1:array}, ${2:value})"
+    ],
+    "description": "Push value to array"
+  },
+  "Array Get": {
+    "prefix": "array.get",
+    "body": [
+      "array.get(${1:array}, ${2:index})"
+    ],
+    "description": "Get value from array"
+  },
+  "Label New": {
+    "prefix": "label.new",
+    "body": [
+      "label.new(${1:x}, ${2:y}, \"${3:text}\", color=${4:color.blue}, textcolor=${5:color.white}, style=label.style_${6:label_up})"
+    ],
+    "description": "Create a new label"
+  },
+  "Line New": {
+    "prefix": "line.new",
+    "body": [
+      "line.new(${1:x1}, ${2:y1}, ${3:x2}, ${4:y2}, color=${5:color.blue}, width=${6:1}, extend=extend.${7:none})"
+    ],
+    "description": "Create a new line"
+  },
+  "Box New": {
+    "prefix": "box.new",
+    "body": [
+      "box.new(${1:left}, ${2:top}, ${3:right}, ${4:bottom}, border_color=${5:color.blue}, bgcolor=${6:color.new(color.blue, 80)})"
+    ],
+    "description": "Create a new box"
+  },
+  "Alert": {
+    "prefix": "alert",
+    "body": [
+      "alert(\"${1:Message}\", alert.freq_${2:once_per_bar})"
+    ],
+    "description": "Create an alert"
+  },
+  "Alert Condition": {
+    "prefix": "alertcondition",
+    "body": [
+      "alertcondition(${1:condition}, title=\"${2:Alert Title}\", message=\"${3:Alert Message}\")"
+    ],
+    "description": "Create an alert condition"
+  },
+  "Strategy Entry": {
+    "prefix": "strategy.entry",
+    "body": [
+      "strategy.entry(\"${1:Entry ID}\", strategy.${2:long}, qty=${3:1}, when=${4:condition})"
+    ],
+    "description": "Strategy entry order"
+  },
+  "Strategy Exit": {
+    "prefix": "strategy.exit",
+    "body": [
+      "strategy.exit(\"${1:Exit ID}\", from_entry=\"${2:Entry ID}\", profit=${3:100}, loss=${4:50})"
+    ],
+    "description": "Strategy exit order"
+  },
+  "Request Security": {
+    "prefix": "request.security",
+    "body": [
+      "request.security(syminfo.tickerid, \"${1:timeframe}\", ${2:expression})"
+    ],
+    "description": "Request security data"
+  },
+  "Pivot High": {
+    "prefix": "ta.pivothigh",
+    "body": [
+      "ta.pivothigh(${1:high}, ${2:leftBars}, ${3:rightBars})"
+    ],
+    "description": "Pivot high"
+  },
+  "Pivot Low": {
+    "prefix": "ta.pivotlow",
+    "body": [
+      "ta.pivotlow(${1:low}, ${2:leftBars}, ${3:rightBars})"
+    ],
+    "description": "Pivot low"
+  },
+  "Math Abs": {
+    "prefix": "math.abs",
+    "body": [
+      "math.abs(${1:value})"
+    ],
+    "description": "Absolute value"
+  },
+  "Math Max": {
+    "prefix": "math.max",
+    "body": [
+      "math.max(${1:value1}, ${2:value2})"
+    ],
+    "description": "Maximum value"
+  },
+  "Math Min": {
+    "prefix": "math.min",
+    "body": [
+      "math.min(${1:value1}, ${2:value2})"
+    ],
+    "description": "Minimum value"
+  },
+  "String Format": {
+    "prefix": "str.format",
+    "body": [
+      "str.format(\"${1:format}\", ${2:arg1}, ${3:arg2})"
+    ],
+    "description": "Format string"
+  },
+  "String To Number": {
+    "prefix": "str.tonumber",
+    "body": [
+      "str.tonumber(${1:string})"
+    ],
+    "description": "Convert string to number"
+  },
+  "String To String": {
+    "prefix": "str.tostring",
+    "body": [
+      "str.tostring(${1:value}, \"${2:format}\")"
+    ],
+    "description": "Convert value to string"
+  },
+  "Color New": {
+    "prefix": "color.new",
+    "body": [
+      "color.new(${1:color.blue}, ${2:0})"
+    ],
+    "description": "Create a new color with transparency"
+  },
+  "Var Declaration": {
+    "prefix": "var",
+    "body": [
+      "var ${1:type} ${2:variableName} = ${3:initialValue}"
+    ],
+    "description": "Variable declaration (persists across bars)"
+  },
+  "Varip Declaration": {
+    "prefix": "varip",
+    "body": [
+      "varip ${1:type} ${2:variableName} = ${3:initialValue}"
+    ],
+    "description": "Variable declaration (persists across bars and repaints)"
+  },
+  "Not NA": {
+    "prefix": "not na",
+    "body": [
+      "not na(${1:value})"
+    ],
+    "description": "Check if value is not NA"
+  },
+  "NZ": {
+    "prefix": "nz",
+    "body": [
+      "nz(${1:value}, ${2:0})"
+    ],
+    "description": "Replace NA with default value"
+  }
+}
