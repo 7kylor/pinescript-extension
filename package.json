@@ -23,6 +23,7 @@
     "indicator",
     "strategy"
   ],
+  "license": "MIT",
   "activationEvents": [
     "onLanguage:pinescript"
   ],

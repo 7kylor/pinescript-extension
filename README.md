@@ -223,6 +223,26 @@ npm install -g vsce
 vsce package
 ```
 
+## Publishing
+
+To publish this extension to VS Code Marketplace and Open VSX, see [PUBLISHING.md](./PUBLISHING.md) for detailed instructions.
+
+Quick start:
+```bash
+# Install publishing tools
+npm install -g @vscode/vsce @openvsx/cli
+
+# Build and package
+npm run compile
+vsce package
+
+# Publish to VS Code Marketplace
+vsce publish
+
+# Publish to Open VSX
+ovsx publish pinescript-1.0.0.vsix
+```
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit issues or pull requests.
